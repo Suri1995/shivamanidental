@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { CalendarCheck } from "lucide-react";
-import logoImg from "@/public/assets/logo.png";
 
 export default function Navbar() {
   return (
@@ -10,7 +9,7 @@ export default function Navbar() {
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <a href="#home" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image
-            src={logoImg}
+            src="/assets/logo.png"
             alt="Shivamani Dental"
             width={40}
             height={40}

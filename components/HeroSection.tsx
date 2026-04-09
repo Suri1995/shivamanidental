@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CalendarCheck, Phone } from "lucide-react";
-import heroImg from "@/public/assets/hero-dentist.jpg";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -101,9 +100,11 @@ export default function HeroSection() {
         >
           <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)]">
             <Image
-              src={heroImg}
+              src="/assets/hero-dentist.jpg"
               alt="Professional dentist at Shivamani Dental"
               className="w-full h-auto object-cover"
+              width={600}
+              height={600}
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />

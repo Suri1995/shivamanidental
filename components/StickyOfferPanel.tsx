@@ -3,9 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CalendarCheck, Gift, Clock } from "lucide-react";
-import sticky1 from "@/public/assets/sticky-1.jpg";
-import sticky2 from "@/public/assets/sticky-2.jpg";
-import sticky3 from "@/public/assets/sticky-3.jpg";
 
 export default function StickyOfferPanel() {
   return (
@@ -33,16 +30,22 @@ export default function StickyOfferPanel() {
 
         {/* 3 Images */}
         <div className="grid grid-cols-3 gap-2">
-          {[sticky1, sticky2, sticky3].map((img, idx) => (
+          {[
+            { src: "/assets/sticky-1.jpg", alt: "Dental clinic 1" },
+            { src: "/assets/sticky-2.jpg", alt: "Dental clinic 2" },
+            { src: "/assets/sticky-3.jpg", alt: "Dental clinic 3" },
+          ].map((img, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Image
-                src={img}
-                alt={`Dental clinic ${idx + 1}`}
+                src={img.src}
+                alt={img.alt}
                 className="w-full h-20 object-cover rounded-lg"
+                width={100}
+                height={80}
               />
             </motion.div>
           ))}

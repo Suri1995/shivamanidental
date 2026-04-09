@@ -16,43 +16,39 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       <HeroSection />
       <FloatingActionSidebar />
 
-      {/* Main content area with both sticky sidebars */}
-      <div className="section-container">
+      <main className="flex-1 w-full max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex gap-8">
-          {/* Left sticky nav */}
           <SectionNavSidebar />
 
-          {/* Center content - all sections */}
-          <div className="flex-1 min-w-0">
-            <section id="services" className="section-padding">
+          <div className="flex-1">
+            <section id="services" className="py-16 md:py-20">
               <ServicesSection />
             </section>
-            <section id="why-choose-us" className="section-padding">
+            <section id="why-choose-us" className="py-16 md:py-20">
               <WhyChooseUs />
             </section>
-            <section id="team" className="section-padding">
+            <section id="team" className="py-16 md:py-20">
               <DoctorsTeam />
             </section>
-            <section id="testimonials" className="section-padding">
+            <section id="testimonials" className="py-16 md:py-20">
               <Testimonials />
             </section>
-            <section id="faqs" className="section-padding">
+            <section id="faqs" className="py-16 md:py-20">
               <FAQsSection />
             </section>
-            <section id="contact" className="section-padding">
+            <section id="contact" className="py-16 md:py-20">
               <ContactSection />
             </section>
           </div>
 
-          {/* Right sticky offer panel */}
           <StickyOfferPanel />
         </div>
-      </div>
+      </main>
 
       <Footer />
       <MobileBottomBar />
