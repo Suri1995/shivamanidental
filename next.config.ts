@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     unoptimized: false,
     formats: ["image/webp", "image/avif"],
   },
+  experimental: {
+    allowedDevOrigins: ["*"],
+  },
   headers: async () => {
     return [
       {
