@@ -1,7 +1,5 @@
 import { CalendarCheck, Gift, Clock } from "lucide-react";
-import sticky1 from "@/assets/sticky-1.jpg";
-import sticky2 from "@/assets/sticky-2.jpg";
-import sticky3 from "@/assets/sticky-3.jpg";
+import Image from "next/image";
 
 const StickyOfferPanel = () => {
   return (
@@ -18,9 +16,29 @@ const StickyOfferPanel = () => {
 
         {/* 3 Images */}
         <div className="grid grid-cols-3 gap-2">
-          <img src={sticky1} alt="Dental clinic" className="w-full h-20 object-cover rounded-lg" loading="lazy" width={512} height={512} />
-          <img src={sticky2} alt="Dental equipment" className="w-full h-20 object-cover rounded-lg" loading="lazy" width={512} height={512} />
-          <img src={sticky3} alt="Happy patient" className="w-full h-20 object-cover rounded-lg" loading="lazy" width={512} height={512} />
+          <Image
+  src="/assets/sticky-1.jpg"
+  alt="Dental clinic"
+  width={512}
+  height={512}
+  className="w-full h-20 object-cover rounded-lg"
+/>
+
+<Image
+  src="/assets/sticky-2.jpg"
+  alt="Dental equipment"
+  width={512}
+  height={512}
+  className="w-full h-20 object-cover rounded-lg"
+/>
+
+<Image
+  src="/assets/sticky-3.jpg"
+  alt="Happy patient"
+  width={512}
+  height={512}
+  className="w-full h-20 object-cover rounded-lg"
+/>
         </div>
 
         <div className="space-y-3">

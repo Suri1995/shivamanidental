@@ -1,18 +1,26 @@
 import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
-import tseslint from "typescript-eslint";
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 
-export default tseslint.config(
-  { ignores: ["dist", ".next", "node_modules"] },
+export default [
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    ignores: ["dist", ".next", "node_modules"],
+  },
+  js.configs.recommended,
+  {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
+      parser: tsParser,
       ecmaVersion: 2020,
-      globals: { ...globals.browser, ...globals.node },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
     plugins: {
+      "@typescript-eslint": tsPlugin,
       "react-hooks": reactHooks,
     },
     rules: {
@@ -20,4 +28,4 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
-);
+];

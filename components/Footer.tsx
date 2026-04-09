@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import logoImg from "@/public/assets/logo.png";
 
 export default function Footer() {
   return (
@@ -24,12 +23,12 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src={logoImg}
-                alt="Shivamani Dental"
-                width={32}
-                height={32}
-                className="h-8 w-8 object-contain"
-              />
+  src="/assets/logo.png"
+  alt="Shivamani Dental"
+  width={32}
+  height={32}
+  className="object-contain"
+/>
               <span className="font-heading font-bold text-lg text-secondary-foreground">
                 Shivamani Dental
               </span>

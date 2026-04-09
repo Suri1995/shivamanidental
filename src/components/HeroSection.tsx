@@ -1,5 +1,6 @@
 import { CalendarCheck, Phone } from "lucide-react";
-import heroImg from "@/assets/hero-dentist.jpg";
+import React from "react";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -51,8 +52,8 @@ const HeroSection = () => {
         {/* Image */}
         <div className="flex-1 relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)]">
-            <img
-              src={heroImg}
+            <Image
+              src="/assets/hero-dentist.jpg"
               alt="Professional dentist at Shivamani Dental"
               className="w-full h-auto object-cover"
               width={800}

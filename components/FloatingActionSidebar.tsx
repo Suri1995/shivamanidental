@@ -30,7 +30,7 @@ export default function FloatingActionSidebar() {
           <motion.span
             className="absolute right-14 whitespace-nowrap px-3 py-1.5 rounded-lg bg-secondary text-secondary-foreground font-body text-xs font-medium pointer-events-none"
             initial={{ opacity: 0, x: 10 }}
-            whileGroupHover={{ opacity: 1, x: 0 }}
+            whileHover={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2 }}
           >
             {action.label}

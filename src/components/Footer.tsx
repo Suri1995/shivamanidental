@@ -1,4 +1,5 @@
-import logoImg from "@/assets/logo.png";
+import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -8,7 +9,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src={logoImg} alt="Shivamani Dental" className="h-8 w-8 object-contain" loading="lazy" />
+              <Image
+  src="/assets/logo.png"
+  alt="Shivamani Dental"
+  width={32}
+  height={32}
+  className="object-contain"
+/>
               <span className="font-heading font-bold text-lg text-secondary-foreground">
                 Shivamani Dental
               </span>
