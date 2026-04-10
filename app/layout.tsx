@@ -19,7 +19,14 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Shivamani Dental – Premium Dental Care",
   description:
-    "Experience world-class dental care at Shivamani Dental. Expert dentists, advanced technology, and compassionate service for your perfect smile.",
+    "Experience world-class dental care at Shivamani Dental. Expert dentists, advanced technology, and compassionate service for your perfect smile",
+
+  icons: {
+    icon: "/favicon.ico",     
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+
   authors: [{ name: "Shivamani Dental" }],
   keywords: [
     "dental care",
@@ -28,15 +35,6 @@ export const metadata: Metadata = {
     "teeth whitening",
     "orthodontics",
   ],
-  openGraph: {
-    title: "Shivamani Dental – Premium Dental Care",
-    description:
-      "Experience world-class dental care with expert dentists and advanced technology.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
 };
 
 export const viewport: Viewport = {
