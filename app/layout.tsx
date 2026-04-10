@@ -17,17 +17,12 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shivamanidental.vercel.app"),
+
   title: "Shivamani Dental – Premium Dental Care",
   description:
     "Experience world-class dental care at Shivamani Dental. Expert dentists, advanced technology, and compassionate service for your perfect smile",
 
-  icons: {
-    icon: "/favicon.ico",     
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
-
-  authors: [{ name: "Shivamani Dental" }],
   keywords: [
     "dental care",
     "dentist",
@@ -35,6 +30,46 @@ export const metadata: Metadata = {
     "teeth whitening",
     "orthodontics",
   ],
+
+  authors: [{ name: "Shivamani Dental" }],
+  creator: "Shivamani Dental",
+  publisher: "Shivamani Dental",
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "/", 
+  },
+
+  openGraph: {
+    title: "Shivamani Dental – Premium Dental Care",
+    description:
+      "Experience world-class dental care with expert dentists and advanced technology.",
+    url: "https://shivamanidental.vercel.app",
+    siteName: "Shivamani Dental",
+    type: "website",
+    images: ["/og-image.png"],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export const viewport: Viewport = {
