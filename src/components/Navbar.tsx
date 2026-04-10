@@ -5,18 +5,15 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
-      <div className="section-container flex items-center justify-between h-16 md:h-20">
+      <div className="section-container flex items-center justify-between h-[78px] md:h-20">
         <a href="#home" className="flex items-center gap-2">
           <Image
-  src="/assets/logo.png"
+  src="/logo.png"
   alt="Shivamani Dental"
-  width={32}
-  height={32}
+  width={200}
+  height={40}
   className="object-contain"
 />
-          <span className="font-heading font-bold text-lg text-secondary">
-            Shivamani <span className="text-primary">Dental</span>
-          </span>
         </a>
 
         <a

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const StickyOfferPanel = () => {
   return (
-    <div className="hidden xl:block sticky top-[120px] self-start w-[280px] shrink-0">
+    <div className="hidden xl:block sticky top-[120px] self-start w-[240px] shrink-0 my-[80px]">
       <div className="rounded-2xl bg-card border border-border shadow-[var(--shadow-elevated)] p-6 space-y-5">
         <div className="flex items-center gap-2">
           <Gift className="w-5 h-5 text-accent" />

@@ -33,7 +33,7 @@ const SectionNavSidebar = () => {
   }, []);
 
   return (
-    <nav className="hidden lg:block sticky top-[120px] self-start w-[200px] shrink-0">
+    <nav className="hidden lg:block sticky top-[120px] self-start w-[200px] shrink-0 border border-primary p-[24px] rounded-3xl my-[80px]">
       <ul className="space-y-1">
         {sections.map(({ id, label }) => (
           <li key={id}>
