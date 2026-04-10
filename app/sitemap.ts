@@ -5,6 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://shivamanidental.vercel.app",
       lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
     },
   ];
 }
