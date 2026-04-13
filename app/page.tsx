@@ -15,12 +15,10 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import GallerySection from "@/components/gallery-section";
 
-// ✅ ADD THIS
 import { faqs } from "@/data/faqs";
 
 export default function Home() {
 
-  // ✅ ADD THIS
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -38,7 +36,6 @@ export default function Home() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
 
-      {/* ✅ FAQ SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
