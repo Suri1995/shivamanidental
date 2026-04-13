@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 
 const sections = [
   { id: "services", label: "Our Services" },
-  { id: "why-choose-us", label: "Why Choose Us" },
   { id: "team", label: "Our Team" },
+  { id: "gallery-section", label: "Clinic Gallery" },
+  { id: "why-choose-us", label: "Why Choose Us" },
   { id: "testimonials", label: "Testimonials" },
   { id: "faqs", label: "FAQs" },
   { id: "contact", label: "Contact" },

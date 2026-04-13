@@ -37,9 +37,9 @@ const ContactSection = () => {
         </div>
         <div className="space-y-6">
           {[
-            { icon: MapPin, title: "Visit Us", lines: ["123 Dental Avenue, MG Road", "Bangalore, Karnataka 560001"] },
-            { icon: Phone, title: "Call Us", lines: ["+91 98765 43210", "+91 80 4567 8901"] },
-            { icon: Mail, title: "Email Us", lines: ["info@shivamanidental.com", "appointments@shivamanidental.com"] },
+            { icon: MapPin, title: "Visit Us", lines: ["Shivamani Dental, opp. Govt hospital, near Kadimi hospital, Ansari Colony, Nalgonda, Telangana 508001", ""] },
+            { icon: Phone, title: "Call Us", lines: ["+91 8682230410", ""] },
+            { icon: Mail, title: "Email Us", lines: ["shankargittaboyina@gmail.com", ""] },
             { icon: Clock, title: "Working Hours", lines: ["Mon - Sat: 9:00 AM – 8:00 PM", "Sunday: 10:00 AM – 2:00 PM"] },
           ].map((item) => (
             <div key={item.title} className="flex gap-4 p-4 rounded-xl border border-border bg-card">

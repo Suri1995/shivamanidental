@@ -61,6 +61,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        keyframes: {
+      "fade-slide-in": {
+        from: { opacity: "0", transform: "translateY(12px)" },
+        to:   { opacity: "1", transform: "translateY(0)" },
+      },
+    },
+    animation: {
+      "fade-slide-in": "fade-slide-in 0.32s ease forwards",
+    },
       },
       borderRadius: {
         lg: "var(--radius)",

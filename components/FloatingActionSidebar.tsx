@@ -5,8 +5,8 @@ import { CalendarCheck, Phone, MessageCircle, MapPin, Stethoscope } from "lucide
 
 const actions = [
   { icon: CalendarCheck, label: "Book Appointment", href: "#contact" },
-  { icon: Phone, label: "Call Us", href: "tel:+919876543210" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919876543210" },
+  { icon: Phone, label: "Call Us", href: "tel:+918682230410" },
+  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/918682230410" },
   { icon: MapPin, label: "Location", href: "#contact" },
   { icon: Stethoscope, label: "Services", href: "#services" },
 ];
