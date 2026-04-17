@@ -1,41 +1,37 @@
 "use client";
 
-import { useState } from "react";
 import { Award, Star, Stethoscope, GraduationCap, Phone } from "lucide-react";
 import Image from "next/image";
 
 const doctor = {
-  name: "Dr. Shivamani",
+  name: "Dr. G. Shankar",
   role: "Chief Dental Surgeon",
-  initials: "DS",
   experience: "15+ Years",
   patients: "10,000+",
   rating: "4.9",
-  qualifications: ["BDS", "MDS – Oral Surgery", "FICD Fellow"],
+  qualifications: ["BDS", "MDS Oral Surgery", "FICD Fellow"],
   specializations: ["Implantology", "Cosmetic Dentistry", "Oral Surgery"],
-  image: null, // swap with "/assets/dr-shivamani.jpg" when ready
+  image: "/shankar-image.jpeg",
 };
 
 const DoctorsTeam = () => {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <div className="w-full">
 
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl text-secondary mb-3">
-          Our <span className="text-primary">Team</span>
+          Your <span className="text-primary">Doctor</span>
         </h2>
         <p className="font-body text-muted-foreground max-w-lg mx-auto">
-          Meet the skilled professional behind your beautiful smile.
+          Meet the Expert Behind Your Perfect Smile.
         </p>
       </div>
 
       {/* Card */}
       <div className="relative max-w-3xl mx-auto">
 
-        {/* Decorative ring behind avatar */}
+        {/* Decorative rings */}
         <div className="
           absolute -top-5 left-1/2 -translate-x-1/2
           w-40 h-40 rounded-full
@@ -60,26 +56,15 @@ const DoctorsTeam = () => {
 
           {/* Avatar */}
           <div className="relative shrink-0 group">
-            {/* Glow ring */}
             <div className="absolute inset-0 rounded-full bg-primary/20 scale-110 group-hover:scale-125 transition-transform duration-500" />
 
             <div className="relative w-36 h-36 rounded-full overflow-hidden border-[3px] border-primary shadow-lg">
-              {doctor.image && !imgError ? (
-                <Image
-                  src={doctor.image}
-                  alt={doctor.name}
-                  fill
-                  className="object-cover"
-                  onError={() => setImgError(true)}
-                />
-              ) : (
-                /* Placeholder avatar — replace with <Image> when photo is ready */
-                <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary font-heading">
-                    {doctor.initials}
-                  </span>
-                </div>
-              )}
+              <Image
+                src={doctor.image}
+                alt={doctor.name}
+                fill
+                className="object-cover object-top"
+              />
             </div>
 
             {/* Online badge */}
@@ -103,9 +88,9 @@ const DoctorsTeam = () => {
             {/* Stats row */}
             <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-5">
               {[
-                { icon: Award,  label: "Experience", value: doctor.experience },
-                { icon: Phone,  label: "Patients",   value: doctor.patients  },
-                { icon: Star,   label: "Rating",     value: doctor.rating    },
+                { icon: Award, label: "Experience", value: doctor.experience },
+                { icon: Phone, label: "Patients",   value: doctor.patients  },
+                { icon: Star,  label: "Rating",     value: doctor.rating    },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -157,6 +142,7 @@ const DoctorsTeam = () => {
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </div>

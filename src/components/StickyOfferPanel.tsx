@@ -15,7 +15,7 @@ const StickyOfferPanel = () => {
         </div>
 
         {/* 3 Images */}
-        <div className="grid grid-cols-3 gap-2">
+        {/* <div className="grid grid-cols-3 gap-2">
           <Image
   src="/assets/sticky-1.jpg"
   alt="Dental clinic"
@@ -39,14 +39,21 @@ const StickyOfferPanel = () => {
   height={512}
   className="w-full h-20 object-cover rounded-lg"
 />
-        </div>
+        </div> */}
 
         <div className="space-y-3">
           <div className="flex items-start gap-3">
             <Clock className="w-4 h-4 text-primary mt-0.5" />
             <div>
               <div className="font-body text-sm font-medium text-foreground">Mon - Sat</div>
-              <div className="font-body text-xs text-muted-foreground">9:00 AM – 8:00 PM</div>
+              <div className="font-body text-xs text-muted-foreground">10:30 am - 2:00 PM <br/>5:00 pm - 8:00 pm</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Clock className="w-4 h-4 text-primary mt-0.5" />
+            <div>
+              <div className="font-body text-sm font-medium text-foreground">Sunday</div>
+              <div className="font-body text-xs text-muted-foreground">10:30 am - 2:00 PM</div>
             </div>
           </div>
         </div>
@@ -57,9 +64,6 @@ const StickyOfferPanel = () => {
           <CalendarCheck className="w-4 h-4" />
           Claim Offer
         </a>
-        <p className="font-body text-xs text-muted-foreground text-center">
-          Limited time. No obligations.
-        </p>
       </div>
     </div>
   );

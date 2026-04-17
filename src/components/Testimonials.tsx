@@ -5,8 +5,8 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const testimonials = [
-  { name: "Meera S.",   role: "Root Canal Patient",  text: "Absolutely wonderful experience! The team made me feel at ease during my root canal. Painless and professional.", rating: 5 },
-  { name: "Arun K.",    role: "Parent of Patient",   text: "Best dental clinic in the city. My kids actually enjoy coming here. Dr. Anitha is amazing with children!", rating: 5 },
+  { name: "Bharath Katla",   role: "Root Canal Patient",  text: "I came here with my tooth ache problem solved in single visit only patient friendly,hygienic environment,reasonable price i advice people who are suffering with teeth problem consult dr shankar", rating: 5 },
+  { name: "Prince Anil Varma",    role: "Parent of Patient",   text: "Extremely professional, knowledgeable, and always takes time to answer all of my questions thoroughly. Besides, every appointment is on time.", rating: 5 },
   { name: "Lakshmi P.", role: "Cosmetic Dentistry",  text: "Got my smile makeover done here. The cosmetic dentistry team transformed my confidence. Highly recommend!", rating: 5 },
   { name: "Ravi T.",    role: "Implant Patient",     text: "The dental implant procedure was smooth and the results are outstanding. Feels completely natural!", rating: 5 },
   { name: "Sunita M.",  role: "Orthodontic Patient", text: "My braces treatment was handled with so much care. Excellent results and friendly staff throughout.", rating: 5 },
@@ -67,7 +67,7 @@ const Testimonials = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl text-secondary mb-3">
-          Patient <span className="text-primary">Testimonials</span>
+          What Our{" "}<span className="text-primary">Patients</span>{" "}Say
         </h2>
         <p className="font-body text-muted-foreground max-w-lg mx-auto">
           Hear what our patients have to say about their experience.
@@ -155,7 +155,7 @@ const Testimonials = () => {
                       <p className="font-heading text-sm font-semibold text-foreground leading-tight">
                         {t.name}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{t.role}</p>
+                      {/* <p className="text-xs text-muted-foreground mt-0.5">{t.role}</p> */}
                     </div>
                   </div>
                   </div>

@@ -13,8 +13,8 @@ export default function MobileBottomBar() {
     >
       <div className="grid grid-cols-3 divide-x divide-border">
         {[
-          { icon: Phone, label: "Call", href: "tel:+919876543210", color: "text-primary" },
-          { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919876543210", color: "text-accent" },
+          { icon: Phone, label: "Call", href: "tel:08682230410", color: "text-primary" },
+          { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919959582025", color: "text-accent" },
           { icon: CalendarCheck, label: "Book", href: "#contact", color: "text-primary" },
         ].map((item, idx) => (
           <motion.a

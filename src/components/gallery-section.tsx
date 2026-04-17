@@ -6,14 +6,14 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const galleryImages = [
-  { src: "/assets/sticky-1.jpg", alt: "Reception Area",      label: "Reception Area"      },
-  { src: "/assets/sticky-2.jpg", alt: "Treatment Room",      label: "Treatment Room"      },
-  { src: "/assets/sticky-3.jpg", alt: "Dental Equipment",    label: "Dental Equipment"    },
-  { src: "/assets/sticky-1.jpg", alt: "Waiting Lounge",      label: "Waiting Lounge"      },
-  { src: "/assets/sticky-2.jpg", alt: "Sterilisation Unit",  label: "Sterilisation Unit"  },
-  { src: "/assets/sticky-3.jpg", alt: "X-Ray Room",          label: "X-Ray Room"          },
-  { src: "/assets/sticky-1.jpg", alt: "Consultation Room",   label: "Consultation Room"   },
-  { src: "/assets/sticky-2.jpg", alt: "Panoramic View",      label: "Panoramic View"      },
+  { src: "/reception-room.jpeg", alt: "Reception Area",      label: "Reception Area"      },
+  { src: "/treatment-room.jpeg", alt: "Treatment Room",      label: "Treatment Room"      },
+  { src: "/dental-equipment.jpeg", alt: "Dental Equipment",    label: "Dental Equipment"    },
+  // { src: "/assets/sticky-1.jpg", alt: "Waiting Lounge",      label: "Waiting Lounge"      },
+  { src: "/sterilisation-unit.jpeg", alt: "Sterilisation Unit",  label: "Sterilisation Unit"  },
+  // { src: "/assets/sticky-3.jpg", alt: "X-Ray Room",          label: "X-Ray Room"          },
+  // { src: "/assets/sticky-1.jpg", alt: "Consultation Room",   label: "Consultation Room"   },
+  { src: "/panoramic-view.jpeg", alt: "Panoramic View",      label: "Panoramic View"      },
 ];
 
 const GAP = 16;
@@ -93,7 +93,7 @@ const GallerySection = () => {
           Clinic <span className="text-primary">Gallery</span>
         </h2>
         <p className="font-body text-muted-foreground max-w-lg mx-auto">
-          Take a look inside our modern, welcoming clinic spaces.
+          Explore Our Advanced, Hygienic & Patient-Friendly Clinic.
         </p>
       </div>
 
@@ -141,7 +141,7 @@ const GallerySection = () => {
                 style={{ width: cardW > 0 ? cardW : undefined }}
                 onClick={() => setLightbox(i)}
               >
-                <div className="relative overflow-hidden rounded-xl border border-primary/15 bg-primary/5 aspect-[4/3]">
+                <div className="relative overflow-hidden rounded-xl border border-primary/15 bg-primary/5 aspect-[4/3] md:aspect-[4/5]">
 
                   {/* Image or placeholder */}
                   {!imgErrors[i] ? (

@@ -31,7 +31,7 @@ const Navbar = () => {
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-heading text-sm md:text-lg font-semibold hover:opacity-90 transition-opacity"
         >
           <Phone className="w-4 h-4 md:w-[17px] md:h-[17px]" />
-          8682230410
+          08682230410
         </a>
       </div>
     </nav>

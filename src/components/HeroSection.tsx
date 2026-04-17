@@ -1,6 +1,65 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { CalendarCheck, Phone, Star, ShieldCheck } from "lucide-react";
+
+function useCountUp(target: number, duration: number = 2000, suffix: string = "+", isK: boolean = false) {
+  const [display, setDisplay] = useState("0" + suffix);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const start = performance.now();
+        const update = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(ease * target);
+          setDisplay(
+            isK
+              ? (current >= 1000 ? Math.floor(current / 1000) + "K" : current) + suffix
+              : current + suffix
+          );
+          if (progress < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration, suffix, isK]);
+
+  return { display, ref };
+}
+
+interface StatItemProps {
+  label: string;
+  target: number;
+  isK: boolean;
+  showDivider: boolean;
+}
+
+function StatItem({ label, target, isK, showDivider }: StatItemProps) {
+  const { display, ref } = useCountUp(target, 2000, "+", isK);
+  return (
+    <div ref={ref} className="flex flex-col items-center relative px-2 sm:px-4">
+      <div className="text-[clamp(20px,3vw,32px)] font-extrabold text-primary leading-none">
+        {display}
+      </div>
+      <div className="text-[10px] sm:text-[11px] text-white/60 mt-2 tracking-[.08em] uppercase">
+        {label}
+      </div>
+      {showDivider && (
+        <span className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 h-8 w-px bg-white/20" />
+      )}
+    </div>
+  );
+}
 
 export default function HeroSection() {
   return (
@@ -8,7 +67,7 @@ export default function HeroSection() {
 
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-100"
         style={{ backgroundImage: "url('/initial-banner-bg.jpg')" }}
       />
 
@@ -22,9 +81,9 @@ export default function HeroSection() {
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-[4.5rem] max-w-7xl mx-auto flex flex-col items-center">
 
           {/* Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/12 border border-primary/40 mb-6 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span className="text-[11px] font-semibold tracking-[.09em] uppercase text-primary-foreground/80">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary border border-primary/40 mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <span className="text-[11px] font-semibold tracking-[.09em] uppercase text-white">
               Advanced &amp; Pain-Free Treatments
             </span>
           </div>
@@ -32,17 +91,12 @@ export default function HeroSection() {
           {/* Heading */}
           <h1 className="text-[clamp(28px,5vw,54px)] font-extrabold leading-[1.15] tracking-tight text-white mb-4 text-balance">
             Your Smile, Our Expertise
-            <span className="block text-primary mt-1.5">
+            <span className="block mt-1.5 text-white">
               Trusted Dental Care in Nalgonda
             </span>
           </h1>
 
-          {/* Description */}
-          <p className="text-[clamp(14px,1.8vw,17px)] leading-[1.8] text-white/85 mb-8 max-w-[90%] sm:max-w-2xl">
-            Experience world-class dental care with advanced technology and a compassionate team dedicated to giving you a perfect, confident smile.
-          </p>
-
-          {/* ✅ NEW: Cards (inline, responsive) */}
+          {/* Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10 w-full max-w-2xl">
 
             {/* Rating */}
@@ -58,12 +112,10 @@ export default function HeroSection() {
 
             {/* Available */}
             <div className="group flex items-center gap-2.5 bg-[rgba(10,50,40,0.70)] border border-primary/30 rounded-xl px-3.5 py-2.5 backdrop-blur-md transition-all duration-300 hover:scale-[1.04] hover:border-green-400/60">
-
               <span className="relative flex w-7 h-7">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
                 <span className="relative inline-flex rounded-full w-7 h-7 bg-green-400"></span>
               </span>
-
               <div>
                 <p className="text-sm font-bold text-white">Available Today</p>
                 <p className="text-[11px] text-white/60">Slots open now</p>
@@ -111,36 +163,16 @@ export default function HeroSection() {
 
           {/* Stats */}
           <div className="flex justify-center">
-  <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
-
-    {[
-      { num: "15+", label: "Years Experience" },
-      { num: "10K+", label: "Happy Patients" },
-      { num: "20+", label: "Treatments" },
-    ].map((s, i) => (
-      <div
-        key={s.label}
-        className="flex flex-col items-center relative px-2 sm:px-4"
-      >
-        {/* Number */}
-        <div className="text-[clamp(20px,3vw,32px)] font-extrabold text-primary leading-none">
-          {s.num}
-        </div>
-
-        {/* Label */}
-        <div className="text-[10px] sm:text-[11px] text-white/60 mt-2 tracking-[.08em] uppercase">
-          {s.label}
-        </div>
-
-        {/* Divider (only between items on desktop) */}
-        {i !== 0 && (
-          <span className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 h-8 w-px bg-white/20" />
-        )}
-      </div>
-    ))}
-
-  </div>
-</div>
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
+              {[
+                { label: "Years Experience", target: 15,    isK: false },
+                { label: "Happy Patients",   target: 10000, isK: true  },
+                { label: "Treatments",       target: 20,    isK: false },
+              ].map((s, i) => (
+                <StatItem key={s.label} {...s} showDivider={i !== 0} />
+              ))}
+            </div>
+          </div>
 
         </div>
       </div>

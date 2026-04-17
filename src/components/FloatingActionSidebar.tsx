@@ -3,7 +3,7 @@
 import { CalendarCheck, MapPin, Stethoscope, LucideIcon } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
-import WhatsappIcon from "public/whatsapp-icon.png";
+import WhatsappIcon from "public/whatsapp-icon-white.png";
 
 type LucideAction = {
   type:   "icon";
@@ -38,7 +38,7 @@ const actions: Action[] = [
     type:  "image",
     icon:  WhatsappIcon,
     label: "WhatsApp",
-    href:  "https://wa.me/8682230410",
+    href:  "https://wa.me/9959582025",
     color: "bg-primary hover:bg-primary/90",
   },
   {

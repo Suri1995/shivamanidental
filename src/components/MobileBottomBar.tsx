@@ -12,7 +12,7 @@ const MobileBottomBar = () => {
           <span className="font-body text-xs font-medium">Call</span>
         </a>
         <a
-          href="https://wa.me/918682230410"
+          href="https://wa.me/919959582025"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 py-3 text-accent"

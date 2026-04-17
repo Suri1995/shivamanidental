@@ -1,16 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import { Smile, ShieldCheck, Sparkles, HeartPulse, Scan, Baby, ChevronDown } from "lucide-react";
+import { Zap, CircleDot, HeartPulse, AlignJustify, Droplets, Baby, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const services = [
-  { icon: Smile,      title: "General Dentistry",  desc: "Comprehensive check-ups, cleanings, and preventive care for your entire family." },
-  { icon: Sparkles,   title: "Cosmetic Dentistry",  desc: "Teeth whitening, veneers, and smile makeovers for a radiant smile." },
-  { icon: ShieldCheck,title: "Dental Implants",     desc: "Permanent tooth replacement with natural-looking, durable implants." },
-  { icon: HeartPulse, title: "Root Canal",          desc: "Pain-free root canal therapy to save and restore damaged teeth." },
-  { icon: Scan,       title: "Orthodontics",        desc: "Braces and aligners for perfectly aligned, beautiful teeth." },
-  { icon: Baby,       title: "Pediatric Dentistry", desc: "Gentle, child-friendly dental care in a fun and comfortable environment." },
+  {
+    icon: Zap,
+    title: "Teeth Whitening",
+    desc: "Get a brighter smile in just one visit with safe and effective whitening.",
+    highlight: "Instant visible results",
+  },
+  {
+    icon: CircleDot,
+    title: "Dental Implants",
+    desc: "Replace missing teeth with strong, natural-looking permanent solutions.",
+    highlight: "Long-lasting & comfortable",
+  },
+  {
+    icon: HeartPulse,
+    title: "Root Canal",
+    desc: "Save your damaged tooth with painless and advanced procedures.",
+    highlight: "Pain-free treatment",
+  },
+  {
+    icon: AlignJustify,
+    title: "Braces & Aligners",
+    desc: "Straighten your teeth with modern braces and invisible aligners.",
+    highlight: "Perfect smile transformation",
+  },
+  {
+    icon: Droplets,
+    title: "Teeth Cleaning",
+    desc: "Remove plaque, stains, and maintain healthy gums with deep cleaning.",
+    highlight: "Fresh & healthy smile",
+  },
+  {
+    icon: Baby,
+    title: "Pediatric Dentistry",
+    desc: "Gentle and friendly dental care specially designed for children.",
+    highlight: "Safe & comfortable for kids",
+  },
 ];
 
 const VISIBLE_COUNT = 3;
@@ -21,11 +51,12 @@ const ServicesSection = () => {
 
   return (
     <div>
-      <h2 className="text-3xl md:text-4xl text-secondary mb-2">
-        Our <span className="text-primary">Services</span>
+      {/* Heading — unchanged */}
+      <h2 className="text-3xl md:text-4xl text-secondary mb-2 text-center">
+        Complete Dental Care for a <span className="text-primary">Healthy, Confident Smile</span>
       </h2>
-      <p className="font-body text-muted-foreground mb-8 max-w-md">
-        Comprehensive dental solutions tailored to your needs.
+      <p className="font-body text-muted-foreground mb-10 text-center">
+        Advanced treatments • Experienced dentists • Affordable pricing.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -36,21 +67,42 @@ const ServicesSection = () => {
               animationDelay: expanded && i >= VISIBLE_COUNT ? `${(i - VISIBLE_COUNT) * 60}ms` : "0ms",
             }}
             className={cn(
-              "group p-6 rounded-xl border border-border bg-card cursor-pointer",
-              "hover:bg-primary hover:-translate-y-1",
-              "transition-all duration-200 ease-out",
+              "group relative flex flex-col p-6 rounded-2xl border border-primary/10 bg-card overflow-hidden",
+              "hover:-translate-y-1.5 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30",
+              "transition-all duration-300 ease-out",
               expanded && i >= VISIBLE_COUNT && "animate-fade-slide-in",
             )}
           >
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-200">
-              <s.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-200" />
+            {/* Top accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary/60 via-primary to-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
+
+            {/* Subtle bg glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            <div className="relative z-10 flex flex-col flex-1">
+              {/* Icon */}
+              {/* <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-5 transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/30">
+                <s.icon className="w-6 h-6 text-primary transition-colors duration-300 group-hover:text-white" strokeWidth={1.75} />
+              </div> */}
+
+              {/* Title */}
+              <h3 className="font-heading text-[17px] font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                {s.title}
+              </h3>
+
+              {/* Description */}
+              <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1 mb-5">
+                {s.desc}
+              </p>
+
+              {/* Highlight pill */}
+              <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                <span className="text-[10px] font-semibold text-primary leading-tight">
+                  {s.highlight}
+                </span>
+              </div>
             </div>
-            <h3 className="font-heading text-lg font-semibold text-foreground group-hover:text-white transition-colors duration-200 mb-2">
-              {s.title}
-            </h3>
-            <p className="font-body text-sm text-muted-foreground group-hover:text-white/80 transition-colors duration-200 leading-relaxed">
-              {s.desc}
-            </p>
           </div>
         ))}
       </div>
@@ -68,12 +120,7 @@ const ServicesSection = () => {
           )}
         >
           {expanded ? "View Less" : "View More"}
-          <ChevronDown
-            className={cn(
-              "w-4 h-4 transition-transform duration-300",
-              expanded && "rotate-180",
-            )}
-          />
+          <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", expanded && "rotate-180")} />
         </button>
       </div>
     </div>
