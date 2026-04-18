@@ -40,7 +40,7 @@ const ContactSection = () => {
             { icon: MapPin, title: "Visit Us", lines: ["Shivamani Dental Clinic, opp. Govt hospital, near Kadimi hospital, Ansari Colony, Nalgonda, Telangana 508001", ""] },
             { icon: Phone, title: "Call Us", lines: ["08682230410", ""] },
             { icon: Mail, title: "Email Us", lines: ["shivamanidentalclinic19@gmail.com ", ""] },
-            { icon: Clock, title: "Working Hours", lines: ["Mon - Sat: 9:00 AM – 2:00 PM & 5:00 PM - 8:00pm" , "Sunday: 10:00 AM – 2:00 PM"] },
+            { icon: Clock, title: "Working Hours", lines: ["Mon - Sat: 10:00 AM – 2:00 PM & 5:30 PM - 8:00pm" , "Sunday: 10:30 AM – 1:00 PM"] },
           ].map((item) => (
             <div key={item.title} className="flex gap-4 p-4 rounded-xl border border-border bg-card">
               <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
