@@ -54,9 +54,9 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-sm font-semibold mb-4">Contact</h4>
             <div className="space-y-2 font-body text-sm text-secondary-foreground/70">
-              <p>Shivamani Dental, opp. Govt hospital, near Kadimi hospital, Ansari Colony, Nalgonda, Telangana 508001</p>
-              <p>+91 8682230410</p>
-              <p>shankargittaboyina@gmail.com</p>
+              <p>Shivamani Dental Clinic, opp. Govt hospital, near Kadimi hospital, Ansari Colony, Nalgonda, Telangana 508001</p>
+              <p>08682230410</p>
+              <p>shivamanidentalclinic19@gmail.com</p>
             </div>
           </div>
         </div>
