@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
 
-  // ✅ ADD THIS BLOCK
+  // Ignore ESLint errors during build
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -13,7 +12,7 @@ const nextConfig: NextConfig = {
     formats: ["image/webp", "image/avif"],
   },
 
-  headers: async () => {
+  async headers() {
     return [
       {
         source: "/:path*",

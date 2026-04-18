@@ -5,7 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import FloatingActionSidebar from "@/components/FloatingActionSidebar";
 import SectionNavSidebar from "@/components/SectionNavSidebar";
 import ServicesSection from "@/components/ServicesSection";
-import StickyOfferPanel from "@/components/StickyOfferPanel";
+// import StickyOfferPanel from "@/components/StickyOfferPanel";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import DoctorsTeam from "@/components/DoctorsTeam";
 import Testimonials from "@/components/Testimonials";
