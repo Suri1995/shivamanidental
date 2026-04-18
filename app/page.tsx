@@ -83,7 +83,7 @@ export default function Home() {
             </section>
           </div>
 
-          <StickyOfferPanel />
+          {/* <StickyOfferPanel /> */}
         </div>
       </main>
 
