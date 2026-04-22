@@ -6,11 +6,11 @@ import Image from "next/image";
 const doctor = {
   name: "Dr. G. Shankar",
   role: "Chief Dental Surgeon",
-  experience: "15+ Years",
+  experience: "10+ Years",
   patients: "10,000+",
   rating: "4.9",
-  qualifications: ["BDS", "MDS Oral Surgery", "FICD Fellow"],
-  specializations: ["Implantology", "Cosmetic Dentistry", "Oral Surgery"],
+  qualifications: ["MDS", "Periodontist", "Implantologist"],
+  specializations: ["Implantology", "Cosmetic Dentistry", "Laser Flap Surgery & Implants"],
   image: "/shankar-image.jpeg",
 };
 
