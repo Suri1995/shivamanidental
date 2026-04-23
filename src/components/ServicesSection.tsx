@@ -98,7 +98,7 @@ const ServicesSection = () => {
               {/* Highlight pill */}
               <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-300">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                <span className="text-[10px] font-semibold text-primary leading-tight">
+                <span className="text-[12px] font-semibold text-primary leading-tight">
                   {s.highlight}
                 </span>
               </div>

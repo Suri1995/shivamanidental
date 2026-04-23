@@ -8,7 +8,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const reasons = [
-  { icon: Award,          title: "15+ Years Experience", desc: "Decades of trusted dental expertise serving thousands of patients." },
+  { icon: Award,          title: "10+ Years Experience",  desc: "Decades of trusted dental expertise serving thousands of patients." },
   { icon: Users,          title: "Expert Team",           desc: "Board-certified specialists across all dental disciplines." },
   { icon: Clock,          title: "Flexible Hours",        desc: "Convenient scheduling including evenings and weekends." },
   { icon: ShieldCheck,    title: "Advanced Technology",   desc: "State-of-the-art equipment for precise, painless treatments." },
