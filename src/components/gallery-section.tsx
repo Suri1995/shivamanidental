@@ -6,9 +6,9 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const galleryImages = [
-  { src: "/reception-room.jpeg", alt: "Reception Area",      label: "Reception Area"      },
   { src: "/treatment-room.jpeg", alt: "Treatment Room",      label: "Treatment Room"      },
   { src: "/dental-equipment.jpeg", alt: "Dental Equipment",    label: "Dental Equipment"    },
+  { src: "/reception-room.jpeg", alt: "Reception Area",      label: "Reception Area"      },
   // { src: "/assets/sticky-1.jpg", alt: "Waiting Lounge",      label: "Waiting Lounge"      },
   { src: "/sterilisation-unit.jpeg", alt: "Sterilisation Unit",  label: "Sterilisation Unit"  },
   // { src: "/assets/sticky-3.jpg", alt: "X-Ray Room",          label: "X-Ray Room"          },
