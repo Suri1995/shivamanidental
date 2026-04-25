@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shivamanidental.vercel.app/sitemap.xml
+Sitemap: https://shivamanidental.com/sitemap.xml

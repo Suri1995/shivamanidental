@@ -17,10 +17,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shivamanidental.vercel.app"),
+  metadataBase: new URL("https://shivamanidental.com"),
 
   title:
-    "Best Dental Clinic in Nalgonda | Implants, RCT, Braces & Teeth Whitening",
+    "Shivamani Dental Clinic | Expert & Affordable Dental Care",
   description:
     "Shivamani Dental Clinic in Nalgonda offers dental implants, root canal, teeth whitening, braces, cleaning & pediatric dentistry. Safe, painless & advanced care",
 
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     title: "Shivamani Dental – Premium Dental Care",
     description:
       "Experience world-class dental care with expert dentists and advanced technology.",
-    url: "https://shivamanidental.vercel.app",
+    url: "https://shivamanidental.com",
     siteName: "Shivamani Dental",
     type: "website",
     images: ["/og-image.png"],
