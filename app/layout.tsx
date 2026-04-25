@@ -19,31 +19,68 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL("https://shivamanidental.vercel.app"),
 
-  title: "Shivamani Dental – Premium Dental Care",
+  title:
+    "Best Dental Clinic in Nalgonda | Implants, RCT, Braces & Teeth Whitening",
   description:
-    "Experience world-class dental care at Shivamani Dental. Expert dentists, advanced technology, and compassionate service for your perfect smile",
+    "Shivamani Dental Clinic in Nalgonda offers dental implants, root canal, teeth whitening, braces, cleaning & pediatric dentistry. Safe, painless & advanced care",
 
   keywords: [
-    "dental care",
-    "dentist",
-    "dental clinic",
-    "teeth whitening",
-    "orthodontics",
-  ],
+  "dental care",
+  "dentist",
+  "dental clinic",
+  "teeth whitening",
+  "orthodontics",
+  "dental clinic in Nalgonda",
+  "best dentist in Nalgonda",
+  "dental implants Nalgonda",
+  "root canal treatment Nalgonda",
+  "teeth whitening Nalgonda",
+  "braces treatment Nalgonda",
+  "teeth cleaning Nalgonda",
+  "pediatric dentist Nalgonda",
+  "cosmetic dentistry Nalgonda",
+  "dental hospital Nalgonda",
+  "dentist near me",
+  "dental clinic near me",
+  "dental treatments",
+  "family dentist",
+  "affordable dental care",
+  "dental checkup",
+  "teeth cleaning service",
+  "dental X-ray clinic",
+  "fluoride treatment dentist",
+  "tooth sensitivity treatment",
+  "orthodontic braces",
+  "teeth straightening treatment",
+  "Invisalign clear aligners",
+  "dental retainer fitting",
+  "interceptive orthodontics",
+  "root canal treatment",
+  "wisdom tooth removal",
+  "oral surgery clinic",
+  "tooth extraction dentist",
+  "sedation dentistry",
+  "pediatric dentist",
+  "children dental clinic",
+  "kids dental checkup",
+  "night guards dentist",
+  "sports mouth guards",
+  "custom mouth guard",
+],
 
   authors: [{ name: "Shivamani Dental" }],
   creator: "Shivamani Dental",
   publisher: "Shivamani Dental",
 
   icons: {
-  icon: [
-    { url: "/favicon.ico" },
-    { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    { url: "/favicon.png", sizes: "512x512", type: "image/png" },
-  ],
-  apple: "/apple-touch-icon.png",
-},
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 
   robots: {
     index: true,
@@ -58,7 +95,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "/", 
+    canonical: "/",
   },
 
   openGraph: {
