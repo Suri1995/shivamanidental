@@ -9,10 +9,7 @@ const galleryImages = [
   { src: "/treatment-room.jpeg", alt: "Treatment Room",      label: "Treatment Room"      },
   { src: "/dental-equipment.jpeg", alt: "Dental Equipment",    label: "Dental Equipment"    },
   { src: "/reception-room.jpeg", alt: "Reception Area",      label: "Reception Area"      },
-  // { src: "/assets/sticky-1.jpg", alt: "Waiting Lounge",      label: "Waiting Lounge"      },
   { src: "/sterilisation-unit.jpeg", alt: "Sterilisation Unit",  label: "Sterilisation Unit"  },
-  // { src: "/assets/sticky-3.jpg", alt: "X-Ray Room",          label: "X-Ray Room"          },
-  // { src: "/assets/sticky-1.jpg", alt: "Consultation Room",   label: "Consultation Room"   },
   { src: "/panoramic-view.jpeg", alt: "Panoramic View",      label: "Panoramic View"      },
 ];
 
@@ -35,6 +32,10 @@ const GallerySection = () => {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
   const outerRef                = useRef<HTMLDivElement>(null);
+
+  // ── Touch refs for swipe (mobile only) ──────────────────────────────────
+  const touchStartX = useRef<number>(0);
+  const touchEndX   = useRef<number>(0);
 
   // Mobile detection
   useEffect(() => {
@@ -84,6 +85,20 @@ const GallerySection = () => {
   const prev = () => setCur((c) => Math.max(0, c - 1));
   const next = () => setCur((c) => Math.min(maxCur, c + 1));
 
+  // ── Touch handlers ───────────────────────────────────────────────────────
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const delta = touchStartX.current - touchEndX.current;
+    if (Math.abs(delta) > 40) {   // ignore tiny accidental touches
+      if (delta > 0) next();      // swipe left  → next slide
+      else           prev();      // swipe right → prev slide
+    }
+  };
+
   return (
     <div className="w-full">
 
@@ -128,8 +143,13 @@ const GallerySection = () => {
           </button>
         </div>
 
-        {/* Track */}
-        <div ref={outerRef} className="overflow-hidden sm:mt-10 sm:pt-1">
+        {/* Track — touch handlers attached here for mobile swipe */}
+        <div
+          ref={outerRef}
+          className="overflow-hidden sm:mt-10 sm:pt-1"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ gap: GAP, transform: `translateX(-${offset}px)` }}

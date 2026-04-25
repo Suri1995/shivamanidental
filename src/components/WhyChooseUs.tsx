@@ -24,6 +24,10 @@ const WhyChooseUs = () => {
   const [cardW, setCardW]         = useState(0);
   const outerRef                  = useRef<HTMLDivElement>(null);
 
+  // ── Touch refs for swipe (mobile only) ──────────────────────────────────
+  const touchStartX = useRef<number>(0);
+  const touchEndX   = useRef<number>(0);
+
   // Mobile detection
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 640px)");
@@ -59,6 +63,20 @@ const WhyChooseUs = () => {
 
   const prev = () => setCur((c) => Math.max(0, c - 1));
   const next = () => setCur((c) => Math.min(maxCur, c + 1));
+
+  // ── Touch handlers ───────────────────────────────────────────────────────
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const delta = touchStartX.current - touchEndX.current;
+    if (Math.abs(delta) > 40) {   // ignore tiny accidental touches
+      if (delta > 0) next();      // swipe left  → next slide
+      else           prev();      // swipe right → prev slide
+    }
+  };
 
   // Pixel-exact offset — guarantees last stop shows exactly perView cards flush
   const offset = cardW > 0 ? cur * (cardW + GAP) : 0;
@@ -109,8 +127,13 @@ const WhyChooseUs = () => {
           </button>
         </div>
 
-        {/* Track outer — clips overflow */}
-        <div ref={outerRef} className="overflow-hidden sm:mt-10 sm:pt-1">
+        {/* Track outer — clips overflow; touch handlers for mobile swipe */}
+        <div
+          ref={outerRef}
+          className="overflow-hidden sm:mt-10 sm:pt-1"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{

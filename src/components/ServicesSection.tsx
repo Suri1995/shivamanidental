@@ -1,42 +1,43 @@
 "use client";
 
 import { useState } from "react";
-import { Zap, CircleDot, HeartPulse, AlignJustify, Droplets, Baby, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const services = [
   {
-    icon: Zap,
+    image: "/tooth-whitening.webp",
     title: "Teeth Whitening",
     desc: "Get a brighter smile in just one visit with safe and effective whitening.",
     highlight: "Instant visible results",
   },
   {
-    icon: CircleDot,
+    image: "/dental-implant.webp",
     title: "Dental Implants",
     desc: "Replace missing teeth with strong, natural-looking permanent solutions.",
     highlight: "Long-lasting & comfortable",
   },
   {
-    icon: HeartPulse,
+    image: "/root-canal.webp",
     title: "Root Canal",
     desc: "Save your damaged tooth with painless and advanced procedures.",
     highlight: "Pain-free treatment",
   },
   {
-    icon: AlignJustify,
+    image: "/braces-aligners.webp",
     title: "Braces & Aligners",
     desc: "Straighten your teeth with modern braces and invisible aligners.",
     highlight: "Perfect smile transformation",
   },
   {
-    icon: Droplets,
+    image: "/dental-cleaning.webp",
     title: "Teeth Cleaning",
     desc: "Remove plaque, stains, and maintain healthy gums with deep cleaning.",
     highlight: "Fresh & healthy smile",
   },
   {
-    icon: Baby,
+    image: "/pediatric-dentistry.webp",
     title: "Pediatric Dentistry",
     desc: "Gentle and friendly dental care specially designed for children.",
     highlight: "Safe & comfortable for kids",
@@ -80,15 +81,21 @@ const ServicesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             <div className="relative z-10 flex flex-col flex-1">
-              {/* Icon */}
-              {/* <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-5 transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/30">
-                <s.icon className="w-6 h-6 text-primary transition-colors duration-300 group-hover:text-white" strokeWidth={1.75} />
-              </div> */}
 
-              {/* Title */}
-              <h3 className="font-heading text-[17px] font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                {s.title}
-              </h3>
+              {/* Icon + Title side by side */}
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 shrink-0 relative">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="font-heading text-[17px] font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  {s.title}
+                </h3>
+              </div>
 
               {/* Description */}
               <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1 mb-5">
